@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-slate-900 text-white font-sans; }
+  h1,h2,h3 { @apply font-display; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-neu-500 text-white px-4 py-2.5 rounded-lg text-sm font-medium
+           hover:bg-neu-600 active:bg-neu-700 transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-neu-400 focus:ring-offset-2
+           focus:ring-offset-slate-900
+           disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  .btn-secondary {
+    @apply bg-slate-700 text-slate-200 px-4 py-2.5 rounded-lg text-sm font-medium
+           border border-slate-600 hover:bg-slate-600 transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-neu-400 focus:ring-offset-2
+           focus:ring-offset-slate-900
+           disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-lg border border-slate-600 bg-slate-700
+           text-white text-sm placeholder:text-slate-400
+           focus:outline-none focus:ring-2 focus:ring-neu-400 focus:border-transparent
+           transition-all duration-150;
+  }
+  .card {
+    @apply bg-slate-800 rounded-xl border border-slate-700 transition-colors duration-300;
+  }
+  .glass {
+    @apply bg-black/40 backdrop-blur-xl border border-white/15 rounded-3xl shadow-2xl;
+  }
+}
+
+/* Select dropdowns */
+select {
+  @apply bg-slate-700 border-slate-600 text-white;
+}
+select option {
+  @apply bg-slate-800 text-white;
+}
+
+/* Table */
+thead tr { @apply border-slate-700; }
+thead th { @apply text-slate-400; }
+tbody tr { @apply border-slate-700 hover:bg-slate-700/50; }
+tbody td { @apply text-slate-200; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-600 rounded-full; }
